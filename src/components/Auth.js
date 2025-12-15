@@ -1,8 +1,8 @@
-// Toggle.js
 import React, { useContext } from "react";
 import { AuthContext } from "./Context.js";
 
-const Toggle = () => {
+// Renamed component from Toggle to Auth as requested by the prompt
+const Auth = () => { 
   const { checked, setAuth } = useContext(AuthContext);
 
   return (
@@ -20,7 +20,8 @@ const Toggle = () => {
           id="auth-checkbox"
           type="checkbox"
           checked={checked}
-          onChange={(e) => setAuth(e.target.checked)}
+          // The handler is correct: it passes the new checkbox state to setAuth
+          onChange={(e) => setAuth(e.target.checked)} 
         />
         I am not a robot
       </label>
@@ -28,4 +29,5 @@ const Toggle = () => {
   );
 };
 
-export default Toggle;
+// Export the renamed component
+export default Auth;
